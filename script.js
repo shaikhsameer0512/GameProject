@@ -1,18 +1,3 @@
-// flower rain animation
-
-for(let i=0;i<25;i++){
-
-let f=document.createElement("div")
-f.className="flower"
-f.innerHTML="🌸"
-
-f.style.left=Math.random()*100+"vw"
-f.style.animationDuration=3+Math.random()*5+"s"
-
-document.body.appendChild(f)
-
-}
-
 
 // LOGIN SYSTEM
 
@@ -21,7 +6,7 @@ function login(){
 let u=document.getElementById("user").value
 let p=document.getElementById("pass").value
 
-if(u==="admin" && p==="admin"){
+if(u==="Kedgaon" && p==="Nagar"){
 
 document.querySelector(".hero").style.display="none"
 document.getElementById("dashboard").style.display="block"
@@ -37,7 +22,7 @@ location.reload()
 
 else{
 
-alert("Invalid login. Use admin / admin")
+alert("Invalid login. Use correct username and password.")
 
 }
 
