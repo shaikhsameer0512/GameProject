@@ -1,4 +1,4 @@
-// FLOWER RAIN
+// flower rain animation
 
 for(let i=0;i<25;i++){
 
@@ -14,10 +14,7 @@ document.body.appendChild(f)
 }
 
 
-
-let loggedIn=false
-
-
+// LOGIN SYSTEM
 
 function login(){
 
@@ -25,8 +22,6 @@ let u=document.getElementById("user").value
 let p=document.getElementById("pass").value
 
 if(u==="admin" && p==="admin"){
-
-loggedIn=true
 
 document.querySelector(".hero").style.display="none"
 document.getElementById("dashboard").style.display="block"
@@ -42,7 +37,7 @@ location.reload()
 
 else{
 
-alert("Invalid Login. Use admin / admin")
+alert("Invalid login. Use admin / admin")
 
 }
 
@@ -93,7 +88,6 @@ const mandapDesigns={
 function openMandap(category){
 
 document.getElementById("designBox").style.display="block"
-
 document.getElementById("designTitle").innerText=category+" Designs"
 
 let gallery=document.getElementById("designGallery")
@@ -119,13 +113,14 @@ gallery.innerHTML+=`
 }
 
 
+
 // FILTER DETAILS
 
 const detailData={
 
 Mandap:"Mandap is the sacred wedding stage where bride and groom take their vows.",
 
-Decor:"Decor includes luxury fabrics, flowers and lighting that create magical ambience.",
+Decor:"Decor includes luxury fabrics, flowers and lighting creating magical ambience.",
 
 Stage:"Wedding stages are designed with royal seating and floral decoration.",
 

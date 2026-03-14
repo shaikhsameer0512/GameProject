@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Husen Mandap Decorators</title>
 
@@ -14,9 +14,15 @@ body{
 margin:0;
 font-family:Segoe UI;
 background:#fafafa;
+scroll-behavior:smooth;
 }
 
-/* HEADER */
+img{
+max-width:100%;
+height:auto;
+}
+
+/* TOPBAR */
 
 .topbar{
 background:#e91e63;
@@ -25,6 +31,8 @@ padding:8px;
 text-align:center;
 font-size:14px;
 }
+
+/* NAVBAR */
 
 .navbar{
 display:flex;
@@ -85,7 +93,7 @@ color:#444;
 color:#777;
 }
 
-/* LOGIN BOX */
+/* LOGIN */
 
 .loginBox{
 background:white;
@@ -117,6 +125,7 @@ cursor:pointer;
 
 .filterBar{
 padding:20px 40px;
+text-align:center;
 }
 
 .filterBar button{
@@ -167,7 +176,7 @@ object-fit:cover;
 padding:12px;
 }
 
-/* DESIGN SECTION */
+/* DESIGN RESULT */
 
 #designBox{
 display:none;
@@ -208,6 +217,47 @@ animation:fall linear infinite;
 to{transform:translateY(110vh)}
 }
 
+/* MOBILE */
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
+.navlinks{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero{
+flex-direction:column;
+padding:30px;
+text-align:center;
+}
+
+.hero img{
+width:100%;
+max-width:350px;
+}
+
+.heroText h1{
+font-size:26px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.panelGrid{
+grid-template-columns:1fr;
+}
+
+}
+
 </style>
 
 </head>
@@ -218,12 +268,9 @@ to{transform:translateY(110vh)}
 India's Favourite Wedding Mandap Decoration Platform
 </div>
 
-
-<!-- NAVBAR -->
-
 <div class="navbar">
 
-<div class="logo">Husen Mandap Decorators</div>
+<div class="logo">Husen Mandap</div>
 
 <div class="navlinks">
 <a href="#">Venues</a>
@@ -236,8 +283,6 @@ India's Favourite Wedding Mandap Decoration Platform
 
 </div>
 
-
-<!-- HERO -->
 
 <div class="hero">
 
@@ -264,8 +309,6 @@ India's Favourite Wedding Mandap Decoration Platform
 </div>
 
 
-<!-- FILTERS -->
-
 <div class="filterBar">
 
 <button onclick="showDetail('Mandap')">Mandap</button>
@@ -279,17 +322,14 @@ India's Favourite Wedding Mandap Decoration Platform
 </div>
 
 
-<!-- DETAILS -->
-
 <div id="detailBox">
 
 <h2 id="detailTitle"></h2>
+
 <p id="detailText"></p>
 
 </div>
 
-
-<!-- MAIN GALLERY -->
 
 <div class="gallery">
 
@@ -316,8 +356,6 @@ India's Favourite Wedding Mandap Decoration Platform
 </div>
 
 
-<!-- DESIGN RESULTS -->
-
 <div id="designBox">
 
 <h2 id="designTitle"></h2>
@@ -327,8 +365,6 @@ India's Favourite Wedding Mandap Decoration Platform
 </div>
 
 
-<!-- DASHBOARD -->
-
 <div id="dashboard">
 
 <h2>Admin Dashboard</h2>
@@ -337,7 +373,7 @@ India's Favourite Wedding Mandap Decoration Platform
 
 <div class="panel">
 <h3>Products</h3>
-<p>120+ premium mandap designs including royal palace and luxury floral decorations.</p>
+<p>120+ premium mandap decoration themes including royal palace and floral luxury designs.</p>
 </div>
 
 <div class="panel">
@@ -352,7 +388,7 @@ India's Favourite Wedding Mandap Decoration Platform
 
 <div class="panel">
 <h3>Support</h3>
-<p>Our decoration experts provide 24x7 support for bookings.</p>
+<p>Our wedding decoration experts provide 24x7 support.</p>
 </div>
 
 </div>
