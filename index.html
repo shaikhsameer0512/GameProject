@@ -1,106 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Whack-a-Mole Game</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Husen Mandap Decorators</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
 
 body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#6a11cb,#2575fc);
-color:white;
+margin:0;
+font-family:Segoe UI;
+background:#fafafa;
 }
 
-.container{
+/* HEADER */
+
+.topbar{
+background:#e91e63;
+color:white;
+padding:8px;
+text-align:center;
+font-size:14px;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#e91e63;
+}
+
+.navlinks a{
+margin:0 15px;
+text-decoration:none;
+color:#444;
+font-weight:500;
+}
+
+.loginBtn{
+background:#e91e63;
+color:white;
+padding:8px 18px;
+border-radius:20px;
+border:none;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:60px;
+gap:60px;
+}
+
+.hero img{
+width:450px;
+border-radius:10px;
+}
+
+.heroText{
+max-width:400px;
+}
+
+.heroText h1{
+font-size:36px;
+color:#444;
+}
+
+.heroText p{
+color:#777;
+}
+
+/* LOGIN BOX */
+
+.loginBox{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+margin-top:20px;
+}
+
+.loginBox input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ddd;
+border-radius:5px;
+}
+
+.loginBox button{
+width:100%;
+padding:10px;
+background:#e91e63;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* FILTER BAR */
+
+.filterBar{
+padding:20px 40px;
+}
+
+.filterBar button{
+margin:6px;
+padding:8px 16px;
+border-radius:20px;
+border:1px solid #ddd;
+background:white;
+cursor:pointer;
+}
+
+/* DETAILS */
+
+#detailBox{
+padding:30px 40px;
+display:none;
+}
+
+/* GALLERY */
+
+.gallery{
+padding:30px 40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+transition:.3s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card h3{
+padding:12px;
+}
+
+/* DESIGN SECTION */
+
+#designBox{
+display:none;
+padding:40px;
+}
+
+/* DASHBOARD */
+
+#dashboard{
+display:none;
+padding:40px;
+}
+
+.panelGrid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.panel{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
 text-align:center;
 }
 
-h1{
-margin-bottom:10px;
-}
+/* FLOWERS */
 
-.score{
+.flower{
+position:fixed;
+top:-50px;
 font-size:20px;
-margin-bottom:15px;
+animation:fall linear infinite;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(3,120px);
-gap:15px;
-justify-content:center;
+@keyframes fall{
+to{transform:translateY(110vh)}
 }
 
-.hole{
-width:120px;
-height:120px;
-background:#333;
-border-radius:10px;
-display:flex;
-align-items:center;
-justify-content:center;
-cursor:pointer;
-font-size:40px;
-}
-
-.hole.active{
-background:#ffcc00;
-}
-
-button{
-margin-top:20px;
-padding:10px 20px;
-border:none;
-border-radius:8px;
-background:#ff4757;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-button:hover{
-background:#e84118;
-}
 </style>
 
 </head>
 
 <body>
 
-<div class="container">
-
-<h1>🎯 Whack-a-Mole</h1>
-
-<div class="score">
-Score: <span id="score">0</span>
+<div class="topbar">
+India's Favourite Wedding Mandap Decoration Platform
 </div>
 
-<div class="grid" id="grid">
 
-<div class="hole"></div>
-<div class="hole"></div>
-<div class="hole"></div>
-<div class="hole"></div>
-<div class="hole"></div>
-<div class="hole"></div>
-<div class="hole"></div>
-<div class="hole"></div>
-<div class="hole"></div>
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">Husen Mandap Decorators</div>
+
+<div class="navlinks">
+<a href="#">Venues</a>
+<a href="#">Designs</a>
+<a href="#">Photos</a>
+<a href="#">Real Weddings</a>
+</div>
+
+<button class="loginBtn" id="authBtn">Login</button>
 
 </div>
 
-<button onclick="startGame()">Start Game</button>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+
+<div class="heroText">
+
+<h1>Luxury Wedding Mandap Designs</h1>
+
+<p>Create unforgettable wedding moments with Husen Mandap Decorators.</p>
+
+<div class="loginBox">
+
+<input id="user" placeholder="Username">
+
+<input id="pass" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FILTERS -->
+
+<div class="filterBar">
+
+<button onclick="showDetail('Mandap')">Mandap</button>
+<button onclick="showDetail('Decor')">Decor</button>
+<button onclick="showDetail('Stage')">Stage</button>
+<button onclick="showDetail('Entrance')">Entrance</button>
+<button onclick="showDetail('Lighting')">Lighting</button>
+<button onclick="showDetail('Reception')">Reception</button>
+<button onclick="showDetail('Floral')">Floral</button>
+
+</div>
+
+
+<!-- DETAILS -->
+
+<div id="detailBox">
+
+<h2 id="detailTitle"></h2>
+<p id="detailText"></p>
+
+</div>
+
+
+<!-- MAIN GALLERY -->
+
+<div class="gallery">
+
+<div class="card" onclick="openMandap('Royal Mandap')">
+<img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e">
+<h3>Royal Mandap</h3>
+</div>
+
+<div class="card" onclick="openMandap('Floral Mandap')">
+<img src="https://images.unsplash.com/photo-1530023367847-a683933f4172">
+<h3>Floral Mandap</h3>
+</div>
+
+<div class="card" onclick="openMandap('Garden Mandap')">
+<img src="https://images.unsplash.com/photo-1520857014576-2c4f4c972b57">
+<h3>Garden Mandap</h3>
+</div>
+
+<div class="card" onclick="openMandap('Luxury Mandap')">
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc">
+<h3>Luxury Mandap</h3>
+</div>
+
+</div>
+
+
+<!-- DESIGN RESULTS -->
+
+<div id="designBox">
+
+<h2 id="designTitle"></h2>
+
+<div id="designGallery" class="gallery"></div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div id="dashboard">
+
+<h2>Admin Dashboard</h2>
+
+<div class="panelGrid">
+
+<div class="panel">
+<h3>Products</h3>
+<p>120+ premium mandap designs including royal palace and luxury floral decorations.</p>
+</div>
+
+<div class="panel">
+<h3>Customers</h3>
+<p>More than 250 happy couples trusted Husen Mandap Decorators.</p>
+</div>
+
+<div class="panel">
+<h3>Contact</h3>
+<p>Email: husenmandap@gmail.com<br>Phone: +91 9876543210</p>
+</div>
+
+<div class="panel">
+<h3>Support</h3>
+<p>Our decoration experts provide 24x7 support for bookings.</p>
+</div>
+
+</div>
 
 </div>
 
